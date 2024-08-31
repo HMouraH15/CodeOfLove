@@ -7,50 +7,76 @@
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
+
 :root {
-  --main-color: #fd052f;
+  --main-color: #490064;
   --body-color: #020202;
   --text-primary-color: #fff;
   --hover-color: #252323;
 }
+
 body {
   display: flex;
   flex-direction: column;
   background-color: var(--body-color);
-  height: auto;
+  min-height: 100vh;
   width: 100%;
+  margin: 0;
 }
+
+.background-1,
+.background-2,
+.background-3,
+.background-4,
+.background-5 {
+  height: 100vh;
+  width: 100%;
+  background: center / cover no-repeat;
+}
+
 .background-1 {
-  height: 100vh;
-  width: 100%;
-  background: center / cover no-repeat url("../img/background-1.png");
+  background-image: url("../img/background-1.svg");
 }
+
 .background-2 {
-  height: 100vh;
-  width: 100%;
-  background: center / cover no-repeat url("../img/background-2.png");
+  background-image: url("../img/background-2.svg");
   background-attachment: fixed;
 }
+
 .background-3 {
+  background-image: url("../img/background-3.svg");
+  background-attachment: fixed;
+}
+
+.background-4 {
+  background-image: url("../img/background-4.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.background-5 {
+  background-image: url("../img/background-5.svg");
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  background: center / cover no-repeat url("../img/background-3.png");
+  background-size: contain; /* Ajusta para que a imagem se contenha dentro da tela */
+  background-position: center; /* Centraliza a imagem na tela */
 }
+
 .cta {
-  gap: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
+
 .btn {
   width: 140px;
   height: 50px;
-  background: linear-gradient(to top, #fd052e53, #fd052e75, #fd052f);
+  background: linear-gradient(to top, #1a00677c, #7505fd75, #2605fd);
   color: var(--text-primary-color);
   border-radius: 50px;
   border: none;
@@ -59,13 +85,16 @@ body {
   position: relative;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  margin: 10px;
 }
+
 .btn span {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: top 0.5s;
 }
+
 .btn-text-one {
   position: absolute;
   width: 100%;
@@ -73,6 +102,7 @@ body {
   left: 0;
   transform: translateY(-50%);
 }
+
 .btn-text-two {
   position: absolute;
   width: 100%;
@@ -80,26 +110,96 @@ body {
   left: 0;
   transform: translateY(-50%);
 }
+
 .btn:hover {
   background: #fff;
   color: var(--main-color);
 }
+
 .btn:hover .btn-text-one {
   top: -100%;
 }
+
 .btn:hover .btn-text-two {
   top: 50%;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
   border-radius: 20px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::selection {
   background-color: var(--main-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+  .background-1,
+  .background-2,
+  .background-3,
+  .background-4,
+  .background-5 {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .btn {
+    width: 120px;
+    height: 45px;
+  }
+
+  .btn span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .background-1,
+  .background-2,
+  .background-3,
+  .background-4,
+  .background-5 {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .btn {
+    width: 100px;
+    height: 40px;
+  }
+
+  .btn span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-1,
+  .background-2,
+  .background-3,
+  .background-4,
+  .background-5 {
+    height: 60vh;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .btn {
+    width: 90px;
+    height: 35px;
+  }
+
+  .btn span {
+    font-size: 0.8rem;
+  }
 }
