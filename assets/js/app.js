@@ -82,7 +82,7 @@ sim.addEventListener("click", () => {
             const message = `Eu escolhi ${result.value} como meu presente! 😍`;
             
             // Crie o link para o WhatsApp
-            const whatsappNumber = "5511993764405"; 
+            const whatsappNumber = "5511989877235"; 
             const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
             Swal.fire({
